@@ -5,7 +5,7 @@ import Signup from '@/views/Signup'
 import Book from '@/views/Book'
 import Books from '@/views/Books'
 import Index from '@/views/Index'
-import Header from '@/components/Header'
+import DefaultHeader from '@/components/DefaultHeader'
 import Books_Category from '@/views/Books_Category'
 
 // Personal
@@ -26,7 +26,7 @@ const router = new Router({
       path: '/',
       components: {
         default: Index,
-        header: Header,
+        header: DefaultHeader,
       }
     }, {
       path: '/login',
@@ -42,25 +42,11 @@ const router = new Router({
       path: '/book/:id', 
       component: Book,
     }, { 
-      path: '/books', 
-      components: {
-        default: Books,
-        header: Header,
-      },
-      children: [
-        {
-          // 当 /user/:id/profile 匹配成功，
-          // UserProfile 会被渲染在 User 的 <router-view> 中
-          path: ':category',
-          component: Books_Category
-        },
-      ]
-    },{ 
       path: '/personal',
       redirect: '/personal/profile',
       components: {
         default: Personal,
-        header: Header,
+        header: DefaultHeader,
       },
       meta: {
         requireAuth: true,
@@ -87,7 +73,7 @@ const router = new Router({
       redirect: '/mycollection/singles',
       components: {
         default: Mycollection,
-        header: Header,
+        header: DefaultHeader,
       },
       meta: {
         requireAuth: true,

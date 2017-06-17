@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>This is the Index of HJmusic</h1>
     <h2>enter 'My Music' to test the player</h2>
+    <button class="loading">test</button>
   </div>
 </template>
 
